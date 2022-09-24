@@ -1,3 +1,21 @@
+@mixin mobile{
+    @media screen and (max-width: 480px){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin laptop{
+    @media screen and (max-width: 1200px){
+        @content;
+    }
+}
+
 .formContainer{
     background-color: #a7bcff;
     height: 100vh;
@@ -106,6 +124,10 @@
 
                 .logo{
                     font-weight: bold;
+
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .user{
@@ -188,7 +210,7 @@
 
         .chat{
             flex: 2;
-            overflow: scroll;
+
             .chatInfo{
                 height: 50px;
                 background-color: #5d5b8d;
